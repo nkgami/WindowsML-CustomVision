@@ -1,0 +1,98 @@
+﻿<Page
+    x:Class="CustomVision_Demo.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:CustomVision_Demo"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d" Width="900" Height="496">
+
+    <Grid
+        x:Name="parentGrid"
+        Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="70" />
+            <RowDefinition Height="336" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="380" />
+            <ColumnDefinition Width="480" />
+        </Grid.ColumnDefinitions>
+
+        <TextBlock Text="Dog or Cat ?"
+               FontSize="36"
+               VerticalAlignment="Center"
+               Grid.Row="0"
+               Grid.Column="0" />
+        <TextBlock Text="Windows ML:"
+               FontSize="32"
+               Margin="10 0 0 0"
+               VerticalAlignment="Center"
+               Grid.Row="0"
+               Grid.Column="1" />
+        <TextBlock Text="Cloud:"
+               FontSize="32"
+               Margin="245 0 0 0"
+               VerticalAlignment="Center"
+               Grid.Row="0"
+               Grid.Column="1" />
+        <Button 
+            Name="recognizeButton"
+            Content="Recognize"
+            Click="recognizeButton_Click"
+            FontSize="26"
+            Grid.Column="1" 
+            Grid.Row="1" 
+            Height="75" 
+            Width="150"
+            Margin="45,261,0,0" 
+            VerticalAlignment="Top"
+            HorizontalAlignment="Left"/>
+        <Button 
+            Name="recognizeButtonCloud"
+            Content="Recognize"
+            Click="recognizeButtonCloud_Click"
+            FontSize="26"
+            Grid.Column="1" 
+            Grid.Row="1" 
+            Height="75" 
+            Width="150"
+            Margin="270,261,0,0" 
+            VerticalAlignment="Top"
+            HorizontalAlignment="Left"/>
+
+        <TextBox Name="imageLabel" Grid.Column="1" Grid.Row="1"
+            FontSize="28"
+            IsReadOnly="True"
+            Width="220"
+            Height="250"
+            HorizontalAlignment="Left"
+            Margin="10 0 10 10"
+            TextWrapping="Wrap"
+            Text="" VerticalAlignment="Top"/>
+        <TextBox Name="imageLabelCloud" Grid.Column="1" Grid.Row="1"
+            FontSize="28"
+            IsReadOnly="True"
+            Width="220"
+            Height="250"
+            HorizontalAlignment="Left"
+            Margin="240 0 10 10"
+            TextWrapping="Wrap"
+            Text="" VerticalAlignment="Top"/>
+        <Border BorderThickness="4"
+            BorderBrush="Black"
+            Margin="0,0,0,0"
+            Grid.Row="1"
+            Grid.Column="0"/>
+
+        <Grid
+            Background="White"
+            Grid.Row="1"
+            Grid.Column="0">
+            <Image Name="previewImage"
+                    Height="336" 
+                    Width="336"
+                    Stretch="Uniform"/>
+        </Grid>
+    </Grid>
+</Page>
